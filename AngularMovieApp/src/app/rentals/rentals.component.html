@@ -1,0 +1,35 @@
+<div style="text-align:center">
+  <h1 class="jumbotron bg-secondary text-white"> Rent a movie</h1>
+  
+  </div>
+  
+  <div class="row">
+  
+    <div class="col-md-6">
+      <p> </p>
+      <h2 style="color:grey; background-color:lightgray" > Select Movie</h2>
+      <table  class="table table-sm table-hover" style="color: gray">
+        <tr>
+          <td> Movie Name </td>
+          <td style="text-align:center"> Movie Price </td>
+          <td style="text-align:center"></td>
+        <td></td>
+        </tr>
+      <tr *ngFor= "let x of movieService.moviesList">
+        <td > {{x.MovieName}}</td>
+        <td style="text-align:center"> {{x.MoviePrice | currency : 'USD' : true}}</td>
+        <td style="text-align:center">
+          <a class="btn" (click)="showForRent(x)">
+            <i  class="fa fa-pencil-square-o"> Select</i>
+            </a></td></tr></table>
+      
+      
+    </div>
+    <div class="col-md-6">
+      <p> </p>
+      <h2 style="color:grey; background-color:lightgray" > Rent</h2>
+      
+    </div>
+  
+  </div>
+  

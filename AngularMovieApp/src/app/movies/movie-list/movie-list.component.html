@@ -1,0 +1,28 @@
+<div></div>
+
+<p></p>
+<h2 style="color:grey; background-color:lightgray" >Movie List</h2>
+
+
+<table  class="table table-sm table-hover" style="color: gray">
+        <tr>
+          <td> Movie Name </td>
+          <td style="text-align:center"> Movie Price </td>
+          <td style="text-align:center">Operations</td>
+        <td></td>
+        </tr>
+      <tr *ngFor= "let x of movieService.moviesList">
+        <td > {{x.MovieName}}</td>
+        <td style="text-align:center"> {{x.MoviePrice | currency : 'USD' : true}}</td>
+        <td style="text-align:center">
+          <a class="btn" (click)="showForEdit(x)">
+            <i  class="fa fa-pencil-square-o"> update</i>
+            </a>
+          <a class="btn text-danger" (click)="onDelete(x.MovieID)">
+            <i class="fa fa-trash-o"> delete</i>
+          </a>
+        </td>
+      
+      </tr>      
+      
+      </table> 

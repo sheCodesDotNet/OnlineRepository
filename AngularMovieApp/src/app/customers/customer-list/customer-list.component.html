@@ -1,0 +1,25 @@
+<p></p>
+<h2 style="color:grey; background-color:lightgray" >Customer List</h2>
+<table class="table table-sm table-hover" style="color: gray">
+  <tr>
+    <td> Customer Name </td>
+    <td> Customer Phone </td>
+    <td>Operations</td>
+  <td></td>
+  </tr>
+<tr *ngFor= "let x of customerService.customersList">
+  <td  *ngIf="x.isAdmin=='no'"> {{x.FirstName}}  {{x.LastName}}</td>
+  <td *ngIf="x.isAdmin=='no'">0{{x.Phone}}</td>
+  <td>
+    <a class="btn" (click)="showForEdit(x)">
+      <i *ngIf="x.isAdmin=='no'" class="fa fa-pencil-square-o"> update</i>
+      </a>
+    <a class="btn text-danger" (click)="onDelete(x.CustomerID)">
+      <i *ngIf="x.isAdmin=='no'" class="fa fa-trash-o"> delete</i>
+    </a>
+  </td>
+
+</tr>
+
+
+</table>
